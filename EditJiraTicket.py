@@ -28,7 +28,7 @@ def main():
     jc = connect_jira(log, "https://your_domain.atlassian.net", "your_username", "your_password")
 
     # print names of all projects
-    #issues_in_proj = jc.search_issues('status not in (Cancelled, Released, Declined) AND issuetype = Bug AND "Env Name" = Production AND (assignee not in (bmalone, antlw01) OR assignee is EMPTY) AND (labels not in (CM2.0, InSprint) OR labels is EMPTY) AND project not in ("JIRA Obsolete Tickets") OR issuetype = Improvement AND labels = production AND labels != CM2.0 AND status not in (Cancelled, Released, Declined) ORDER BY Rank ASC',maxResults=50000)
+    #issues_in_proj = jc.search_issues('your_query_here',maxResults=50000)
 
     issue_result = jc.issue('UEAW-8219',fields='customfield_10102')
     print(vars(issue_result))
